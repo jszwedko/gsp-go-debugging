@@ -1,0 +1,40 @@
+time="2014-07-27 16:26:39.993583815 -0400 EDT" level="info" msg="received request for /factorial/3" request=148eb7b9-1e7a-446d-65d9-9fbecd02b98e 
+time="2014-07-27 16:26:39.994075241 -0400 EDT" level="debug" msg="parsing resource 3 as integer" request=148eb7b9-1e7a-446d-65d9-9fbecd02b98e 
+time="2014-07-27 16:26:39.994148229 -0400 EDT" level="info" msg="received request for /factorial/2" request=5b6e84f2-8580-4f04-6657-d6113d3b257d 
+time="2014-07-27 16:26:39.994180055 -0400 EDT" level="debug" msg="parsing resource 2 as integer" request=5b6e84f2-8580-4f04-6657-d6113d3b257d 
+time="2014-07-27 16:26:39.995381588 -0400 EDT" level="info" msg="received request for /factorial/1" request=ccef503e-949f-480a-436e-27f2d4d54c2b 
+time="2014-07-27 16:26:39.995420491 -0400 EDT" level="debug" msg="parsing resource 1 as integer" request=ccef503e-949f-480a-436e-27f2d4d54c2b 
+time="2014-07-27 16:26:39.998976097 -0400 EDT" level="info" msg="received request for /factorial/5" request=aca9fdb3-c6b1-4bac-713d-6ed7a7fca39d 
+time="2014-07-27 16:26:39.999028937 -0400 EDT" level="debug" msg="parsing resource 5 as integer" request=aca9fdb3-c6b1-4bac-713d-6ed7a7fca39d 
+time="2014-07-27 16:26:40.003019108 -0400 EDT" level="info" msg="received request for /factorial/4" request=a5a206a4-9f18-40a2-78fc-17bcec7b9da9 
+time="2014-07-27 16:26:40.003069674 -0400 EDT" level="debug" msg="parsing resource 4 as integer" request=a5a206a4-9f18-40a2-78fc-17bcec7b9da9 
+time="2014-07-27 16:26:40.003814639 -0400 EDT" level="info" msg="received request for /factorial/7" request=85f78c3f-63df-40ed-76b6-c933ce9f046c 
+time="2014-07-27 16:26:40.003852996 -0400 EDT" level="debug" msg="parsing resource 7 as integer" request=85f78c3f-63df-40ed-76b6-c933ce9f046c 
+time="2014-07-27 16:26:40.00596187 -0400 EDT" level="info" msg="received request for /factorial/6" request=b52c8ab5-c0b1-40d1-6128-481085977374 
+time="2014-07-27 16:26:40.006010511 -0400 EDT" level="debug" msg="parsing resource 6 as integer" request=b52c8ab5-c0b1-40d1-6128-481085977374 
+time="2014-07-27 16:26:40.007265198 -0400 EDT" level="info" msg="received request for /factorial/10" request=71b12343-3df0-4cc1-6175-0cec2617fbc5 
+time="2014-07-27 16:26:40.007318584 -0400 EDT" level="debug" msg="parsing resource 10 as integer" request=71b12343-3df0-4cc1-6175-0cec2617fbc5 
+time="2014-07-27 16:26:40.007662054 -0400 EDT" level="info" msg="received request for /factorial/8" request=dfcf5db2-8b6b-4851-56fb-01318b2c6014 
+time="2014-07-27 16:26:40.007706928 -0400 EDT" level="debug" msg="parsing resource 8 as integer" request=dfcf5db2-8b6b-4851-56fb-01318b2c6014 
+time="2014-07-27 16:26:40.009698999 -0400 EDT" level="info" msg="received request for /factorial/9" request=02561d81-c48f-48b4-5ec3-795a86ca9b17 
+time="2014-07-27 16:26:40.009743514 -0400 EDT" level="debug" msg="parsing resource 9 as integer" request=02561d81-c48f-48b4-5ec3-795a86ca9b17 
+time="2014-07-27 16:26:40.1943083 -0400 EDT" level="debug" msg="calculating factorial for 3" request=148eb7b9-1e7a-446d-65d9-9fbecd02b98e 
+time="2014-07-27 16:26:40.194384926 -0400 EDT" level="debug" msg="calculating factorial for 2" request=5b6e84f2-8580-4f04-6657-d6113d3b257d 
+time="2014-07-27 16:26:40.195614522 -0400 EDT" level="debug" msg="calculating factorial for 1" request=ccef503e-949f-480a-436e-27f2d4d54c2b 
+time="2014-07-27 16:26:40.199141324 -0400 EDT" level="debug" msg="calculating factorial for 5" request=aca9fdb3-c6b1-4bac-713d-6ed7a7fca39d 
+time="2014-07-27 16:26:40.203234422 -0400 EDT" level="debug" msg="calculating factorial for 4" request=a5a206a4-9f18-40a2-78fc-17bcec7b9da9 
+time="2014-07-27 16:26:40.203984145 -0400 EDT" level="debug" msg="calculating factorial for 7" request=85f78c3f-63df-40ed-76b6-c933ce9f046c 
+time="2014-07-27 16:26:40.20618603 -0400 EDT" level="debug" msg="calculating factorial for 6" request=b52c8ab5-c0b1-40d1-6128-481085977374 
+time="2014-07-27 16:26:40.207506119 -0400 EDT" level="debug" msg="calculating factorial for 10" request=71b12343-3df0-4cc1-6175-0cec2617fbc5 
+time="2014-07-27 16:26:40.207850775 -0400 EDT" level="debug" msg="calculating factorial for 8" request=dfcf5db2-8b6b-4851-56fb-01318b2c6014 
+time="2014-07-27 16:26:40.209913981 -0400 EDT" level="debug" msg="calculating factorial for 9" request=02561d81-c48f-48b4-5ec3-795a86ca9b17 
+time="2014-07-27 16:26:40.394510068 -0400 EDT" level="info" msg="responding with 6" request=148eb7b9-1e7a-446d-65d9-9fbecd02b98e 
+time="2014-07-27 16:26:40.394707211 -0400 EDT" level="info" msg="responding with 2" request=5b6e84f2-8580-4f04-6657-d6113d3b257d 
+time="2014-07-27 16:26:40.39577252 -0400 EDT" level="info" msg="responding with 1" request=ccef503e-949f-480a-436e-27f2d4d54c2b 
+time="2014-07-27 16:26:40.399312017 -0400 EDT" level="info" msg="responding with 120" request=aca9fdb3-c6b1-4bac-713d-6ed7a7fca39d 
+time="2014-07-27 16:26:40.403409804 -0400 EDT" level="info" msg="responding with 24" request=a5a206a4-9f18-40a2-78fc-17bcec7b9da9 
+time="2014-07-27 16:26:40.40414918 -0400 EDT" level="info" msg="responding with 5040" request=85f78c3f-63df-40ed-76b6-c933ce9f046c 
+time="2014-07-27 16:26:40.406389271 -0400 EDT" level="info" msg="responding with 720" request=b52c8ab5-c0b1-40d1-6128-481085977374 
+time="2014-07-27 16:26:40.407664913 -0400 EDT" level="info" msg="responding with 3628800" request=71b12343-3df0-4cc1-6175-0cec2617fbc5 
+time="2014-07-27 16:26:40.408608129 -0400 EDT" level="info" msg="responding with 40320" request=dfcf5db2-8b6b-4851-56fb-01318b2c6014 
+time="2014-07-27 16:26:40.410055576 -0400 EDT" level="info" msg="responding with 362880" request=02561d81-c48f-48b4-5ec3-795a86ca9b17 
