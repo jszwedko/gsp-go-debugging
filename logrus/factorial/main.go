@@ -17,12 +17,12 @@ import (
 
 var (
 	logLevels = map[string]logrus.Level{
-		"debug": logrus.Debug,
-		"info":  logrus.Info,
-		"warn":  logrus.Warn,
-		"error": logrus.Error,
-		"fatal": logrus.Fatal,
-		"panic": logrus.Panic,
+		"debug": logrus.DebugLevel,
+		"info":  logrus.InfoLevel,
+		"warn":  logrus.WarnLevel,
+		"error": logrus.ErrorLevel,
+		"fatal": logrus.FatalLevel,
+		"panic": logrus.PanicLevel,
 	}
 
 	logFormats = map[string]logrus.Formatter{
@@ -119,6 +119,9 @@ func main() {
 
 		fmt.Fprintf(w, "%d", f)
 	})
+
+	i := 9
+	_ = i
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

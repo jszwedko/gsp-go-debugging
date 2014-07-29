@@ -76,13 +76,18 @@
 
 - Gotchas:
   - OSX ships with GDB 6.0 (you'll want > 7.0)
+  - Wasn't able to get Go GDB extensions working with `goenv` Go versions
+  - Unusable in Go 1.3
+    - https://code.google.com/p/go/issues/detail?id=8256
+    - https://code.google.com/p/go/issues/detail?id=7803
+    - https://code.google.com/p/go/issues/detail?id=5552
 
 - [Debugging Go Code with GDB](http://golang.org/doc/gdb)
 - [GDB User mangual](https://sourceware.org/gdb/current/onlinedocs/gdb/)
 
 # Presenter Notes
 - Introduce bug into Factorial function
-- Compile test package and step throug
+- Compile test package and step through
 
 ---
 
@@ -94,6 +99,7 @@
   - `break <file.go line>` Insert breakpoint in `file.go` at line `line`
   - `break <p.Func>` Insert breakpoint at function `Func` of package `p`
 - `bt` Print backtrace
+- `info args` Show function arguments
 - `info locals` Show local variables
 - `p <variable>` Print variable value
 - `whatis <variable>` Print type of variable
@@ -103,12 +109,13 @@
 - `` Execute last command again
 
 - Go extensions (http://golang.org/src/pkg/runtime/runtime-gdb.py)
-  - `info goroutines` Print goroutines
+  - `info goroutines` Print goroutines (this a
   - `goroutine <n> <cmd>` Execute `cmd` in the context of goroutine `n`
   - Adds pretty printing of some non-standard types
   - `$len()` Gets len
   - `$dtype()` Get underlying type of interface value
 
+- http://www.goinggo.net/2013/06/installing-go-gocode-gdb-and-liteide.html has a walkthrough for GDB and LiteIDE on OSX
 ---
 
 # Interactive debugging
@@ -125,6 +132,16 @@ GDB does not understand Go programs well. The stack management, threading, and r
 - Graphical editor for Golang
 - Integrates with GDB
 - https://github.com/visualfc/liteide
+
+### Setup
+- View -> Edit Environment
+  - set GOPATH and GOROOT
+- Click gear icon when file with main() is open
+  - Set `BUILDARGS` to `-gcflags "-N -l"`
+- Set breakpoints with red orb
+- Debug -> Start Debugging
+
+- http://www.goinggo.net/2013/06/installing-go-gocode-gdb-and-liteide.html has a walkthrough for GDB and LiteIDE on OSX
 
 # Presenter Notes
 - Relatively simple to get up and running
