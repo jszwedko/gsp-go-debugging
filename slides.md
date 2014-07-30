@@ -15,10 +15,11 @@
 ---
 
 # Debugging
-- Tracing
-- Interactive debugger
-- Post-mortem debugging
-- Remote debugger
+
+## Tracing
+## Interactive debugger
+## Post-mortem debugging
+## Remote debugger
 
 # Presenter Notes
 - Any other debugging styles?
@@ -26,17 +27,21 @@
 ---
 
 # Go Debugging
-- Tracing
-  - `log`
-  - `logrus`
-  - Other loggers
-- Interactive debugger
-  - `gdb`
-  - LiteIDE
-- Post-mortem debugging
-  - `GOTRACEBACK`
-- Remote debugger
-  - None that I'm aware of
+
+## Tracing
+- `log`
+- `logrus`
+
+## Interactive debugger
+- `gdb`
+- LiteIDE
+
+## Post-mortem debugging
+- `GOTRACEBACK`
+- `SIGABRT`
+
+# Presenter Notes
+- No remote debugger
 
 ---
 
@@ -45,18 +50,24 @@
 ---
 
 # Tracing
-- Add log statements
+
 - [`log`](http://golang.org/pkg/log)
-  - Offers much of what you need from a logger
-  - Contains a global logger to get started quickly
 - [`logrus`](github.com/sirupsen/logrus)
-  - Multiple output formats (text ([[l2met][http://r.32k.io/l2met-introduction]), json)
-  - Multiple levels (can configure output level)
-  - Hooks (e.g. sending to airbrake when an error is logged)
-  - Fields (can be used for metrics or context)
+    - Multiple output formats (text ([[l2met](http://r.32k.io/l2met-introduction)), json)
+    - Multiple levels (can configure output level)
+    - Hooks (e.g. sending to airbrake when an error is logged)
+    - Fields (can be used for metrics or context)
 - [Logs are streams](http://adam.herokuapp.com/past/2011/4/1/logs_are_streams_not_files/)
 - [`GODEBUG`](http://golang.org/pkg/runtime)
-  - Can be used to output information about garbage collection and the scheduler
+    - Can be used to output information about garbage collection and the scheduler
+
+---
+
+# Tracing
+
+## `log`
+- Offers much of what you need from a logger
+- Contains a global logger to get started quickly
 
 - Logging Example (see logging/ and logrus/ subdirectories)
 
