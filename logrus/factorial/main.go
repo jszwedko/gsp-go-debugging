@@ -120,9 +120,6 @@ func main() {
 		fmt.Fprintf(w, "%d", f)
 	})
 
-	i := 9
-	_ = i
-
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 

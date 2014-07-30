@@ -55,6 +55,8 @@
   - Hooks (e.g. sending to airbrake when an error is logged)
   - Fields (can be used for metrics or context)
 - [Logs are streams](http://adam.herokuapp.com/past/2011/4/1/logs_are_streams_not_files/)
+- [`GODEBUG`](http://golang.org/pkg/runtime)
+  - Can be used to output information about garbage collection and the scheduler
 
 - Logging Example (see logging/ and logrus/ subdirectories)
 
@@ -81,6 +83,7 @@
     - https://code.google.com/p/go/issues/detail?id=8256
     - https://code.google.com/p/go/issues/detail?id=7803
     - https://code.google.com/p/go/issues/detail?id=5552
+  - Hit or miss about which locals are available to be printed
 
 - [Debugging Go Code with GDB](http://golang.org/doc/gdb)
 - [GDB User mangual](https://sourceware.org/gdb/current/onlinedocs/gdb/)
@@ -102,6 +105,7 @@
 - `info args` Show function arguments
 - `info locals` Show local variables
 - `p <variable>` Print variable value
+  - `<slc>->array[<x>]` print element `x` of `slc`
 - `whatis <variable>` Print type of variable
 - `continue` Continue to next break point
 - `step` Run until next source line
@@ -149,5 +153,19 @@ GDB does not understand Go programs well. The stack management, threading, and r
 ---
 
 # Post-mortem debugging
+
+- `GOTRACEBACK`: Dump stack traces when Go program encounters unrecovered panic or unexpected runtime condition
+  - 0: no stack traces
+  - 1: dump user goroutines
+  - 2: dump run time and user goroutines
+  - crash: dump user and run time goroutines and crash in OS specific manner (core dump)
+    - You can also get this manually by issuing a `SIGABRT` to a running process
+
+- `gdb -d $(go env GOROOT) -c core <your app>`
+
+- Gotchas:
+  - Don't forget to set `ulimit -c` to non-zero value
+  - TODO: Getting ulimit -c working on OS X
+
 
 # Presenter Notes
