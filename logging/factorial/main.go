@@ -22,11 +22,11 @@ func main() {
 			return
 		}
 
-		log.Printf("parsing resource %s as integer", pathParts[2])
-		n, err := strconv.ParseInt(pathParts[2], 10, 64)
+		log.Printf("parsing resource %s as integer", pathParts[1])
+		n, err := strconv.ParseInt(pathParts[1], 10, 64)
 		if err != nil {
 			log.Printf("returning 400: %v", err)
-			http.Error(w, fmt.Sprintf("could not parse as integer: %s", pathParts[2]), http.StatusBadRequest)
+			http.Error(w, fmt.Sprintf("could not parse as integer: %s", pathParts[1]), http.StatusBadRequest)
 			return
 		}
 

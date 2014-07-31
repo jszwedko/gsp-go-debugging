@@ -1,5 +1,4 @@
-# Continous Delivery:
-# Reliable software development through automation
+# Debugging Go
 
 ## Jesse Szwedko
 ## j.szwedko@modcloth.com
@@ -56,7 +55,7 @@
 
 - [Logs are streams](http://adam.herokuapp.com/past/2011/4/1/logs_are_streams_not_files/)
 - stdlib [`log`](http://golang.org/pkg/log)
-- [`logrus`](github.com/sirupsen/logrus)
+- [`logrus`](https://github.com/sirupsen/logrus)
 - [`GODEBUG`](http://golang.org/pkg/runtime)
     - Can be used to output information about garbage collection and the scheduler
 
@@ -157,7 +156,7 @@
 - `p <variable>` Print variable value
     - `<slc>->array[<x>]` print element `x` of `slc`
 - `whatis <variable>` Print type of variable
-- `` Execute last command again
+- Leave empty to execute last command again
 
 
 ---
@@ -169,6 +168,7 @@
 - `info goroutines` Print goroutines
 - `goroutine <n> <cmd>` Execute `cmd` in the context of goroutine `n`
 - `$len()` Gets len
+- `$cap()` Gets capacity
 - `$dtype()` Get underlying type of interface value
 - [Walkthrough of installing gdb/LiteIDE on OSX](http://www.goinggo.net/2013/06/installing-go-gocode-gdb-and-liteide.html)
 
@@ -230,8 +230,8 @@
 
 - `GOTRACEBACK`: Dump stack traces when Go program encounters unrecovered panic or unexpected runtime condition
   - 0: no stack traces
-  - 1: dump user goroutines
-  - 2: dump run time and user goroutines
+  - 1: dump user goroutines backtrace (default)
+  - 2: dump run time and user goroutines backtrace
   - crash: dump user and run time goroutines and crash in OS specific manner (core dump)
     - You can also get this manually by issuing a `SIGABRT` to a running process
 
@@ -241,11 +241,12 @@
   - Don't forget to set `ulimit -c` to non-zero value
   - TODO: Getting ulimit -c working on OS X
 
-# Presenter Notes
-
 ---
 
 # Post-mortem debugging example
+
+# Presenter Notes
+- Also demonstrate SIGABRT
 
 ---
 

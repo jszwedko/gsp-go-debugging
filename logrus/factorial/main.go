@@ -78,26 +78,26 @@ func main() {
 		}
 
 		logger.WithFields(logrus.Fields{
-			"request": u4,
+			"request": u4.String(),
 		}).Infof("received request for %s", r.URL)
 
 		pathParts := strings.Split(r.URL.Path, "/")
 
 		if len(pathParts) < 3 || pathParts[2] == "" {
 			logger.WithFields(logrus.Fields{
-				"request": u4,
+				"request": u4.String(),
 			}).Infof("returning 404")
 			http.Error(w, "", http.StatusNotFound)
 			return
 		}
 
 		logger.WithFields(logrus.Fields{
-			"request": u4,
+			"request": u4.String(),
 		}).Debugf("parsing resource %s as integer", pathParts[2])
 		n, err := strconv.ParseInt(pathParts[2], 10, 64)
 		if err != nil {
 			logger.WithFields(logrus.Fields{
-				"request": u4,
+				"request": u4.String(),
 			}).Infof("returning 400: %v", err)
 			http.Error(w, fmt.Sprintf("could not parse as integer: %s", pathParts[2]), http.StatusBadRequest)
 			return
@@ -106,7 +106,7 @@ func main() {
 		time.Sleep(200 * time.Millisecond)
 
 		logger.WithFields(logrus.Fields{
-			"request": u4,
+			"request": u4.String(),
 		}).Debugf("calculating factorial for %d", n)
 
 		f := math2.Factorial(n)
@@ -114,7 +114,7 @@ func main() {
 		time.Sleep(200 * time.Millisecond)
 
 		logger.WithFields(logrus.Fields{
-			"request": u4,
+			"request": u4.String(),
 		}).Infof("responding with %d", f)
 
 		fmt.Fprintf(w, "%d", f)

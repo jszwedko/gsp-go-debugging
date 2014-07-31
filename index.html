@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Continous Delivery:</title>
+    <title>Debugging Go</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1335,11 +1335,10 @@ li li {
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Continous Delivery:</h1></header>
+            <header><h1>Debugging Go</h1></header>
             
             
-            <section><h1>Reliable software development through automation</h1>
-<h2>Jesse Szwedko</h2>
+            <section><h2>Jesse Szwedko</h2>
 <h2>j.szwedko@modcloth.com</h2>
 <h2>@jesse_szwedko</h2>
 <h2>This talk: <a href="https://github.com/jszwedko/gsp-go-debugging">github.com/jszwedko/gsp-go-debugging</a></h2>
@@ -1521,7 +1520,7 @@ li li {
             <section><ul>
 <li><a href="http://adam.herokuapp.com/past/2011/4/1/logs_are_streams_not_files/">Logs are streams</a></li>
 <li>stdlib <a href="http://golang.org/pkg/log"><code>log</code></a></li>
-<li><a href="github.com/sirupsen/logrus"><code>logrus</code></a></li>
+<li><a href="https://github.com/sirupsen/logrus"><code>logrus</code></a></li>
 <li><a href="http://golang.org/pkg/runtime"><code>GODEBUG</code></a><ul>
 <li>Can be used to output information about garbage collection and the scheduler</li>
 </ul>
@@ -1912,7 +1911,7 @@ li li {
 </ul>
 </li>
 <li><code>whatis &lt;variable&gt;</code> Print type of variable</li>
-<li>`` Execute last command again</li>
+<li>Leave empty to execute last command again</li>
 </ul></section>
             
           </div>
@@ -1949,6 +1948,7 @@ li li {
 <li><code>info goroutines</code> Print goroutines</li>
 <li><code>goroutine &lt;n&gt; &lt;cmd&gt;</code> Execute <code>cmd</code> in the context of goroutine <code>n</code></li>
 <li><code>$len()</code> Gets len</li>
+<li><code>$cap()</code> Gets capacity</li>
 <li><code>$dtype()</code> Get underlying type of interface value</li>
 <li><a href="http://www.goinggo.net/2013/06/installing-go-gocode-gdb-and-liteide.html">Walkthrough of installing gdb/LiteIDE on OSX</a></li>
 </ul></section>
@@ -2212,8 +2212,8 @@ li li {
             <section><ul>
 <li><code>GOTRACEBACK</code>: Dump stack traces when Go program encounters unrecovered panic or unexpected runtime condition</li>
 <li>0: no stack traces</li>
-<li>1: dump user goroutines</li>
-<li>2: dump run time and user goroutines</li>
+<li>1: dump user goroutines backtrace (default)</li>
+<li>2: dump run time and user goroutines backtrace</li>
 <li>
 <p>crash: dump user and run time goroutines and crash in OS specific manner (core dump)</p>
 <ul>
@@ -2228,8 +2228,7 @@ li li {
 </li>
 <li>Don't forget to set <code>ulimit -c</code> to non-zero value</li>
 <li>TODO: Getting ulimit -c working on OS X</li>
-</ul>
-</section>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -2263,6 +2262,10 @@ li li {
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
             <section>
+            
+              <ul>
+<li>Also demonstrate SIGABRT</li>
+</ul>
             
             </section>
           </div>
@@ -2321,7 +2324,7 @@ li li {
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Continous Delivery:</a></th>
+        <th><a href="#slide1">Debugging Go</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
