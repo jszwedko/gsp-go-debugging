@@ -10,6 +10,7 @@ apt-get install -yq \
   pkg-config \
   build-essential \
   xfce4 \
+  xfce4-goodies \
   gdb \
   git \
   curl \
