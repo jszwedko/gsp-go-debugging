@@ -11,6 +11,8 @@ import (
 )
 
 func main() {
+	log.SetFlags(LstdFlags | Lshortfile)
+
 	http.HandleFunc("/factorial/", func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("received request for %s", r.URL)
 

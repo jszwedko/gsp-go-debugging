@@ -66,11 +66,15 @@
 # Tracing: `log`
 
 - Offers much of what you need from a logger
-- Contains a global logger to get started quickly
+- Recommend (conditonally?) setting `Flags` to include source line
+- Recommend allowing conditional enabling of logs (integration tests)
 
 ---
 
 # `log` example
+
+# Presenter Notes
+- Introduce sleep and use concurrent requests
 
 ---
 
@@ -86,6 +90,7 @@
 # `logrus` example
 
 # Presenter Notes
+- Show request UUID
 - Any other logging packages people like using?
 
 ---
@@ -228,18 +233,22 @@
 
 # Post-mortem debugging
 
-- `GOTRACEBACK`: Dump stack traces when Go program encounters unrecovered panic or unexpected runtime condition
-  - 0: no stack traces
-  - 1: dump user goroutines backtrace (default)
-  - 2: dump run time and user goroutines backtrace
-  - crash: dump user and run time goroutines and crash in OS specific manner (core dump)
+## `GOTRACEBACK`: Dump stack traces when Go program encounters unrecovered panic or unexpected runtime condition
+- 0: no stack traces
+- 1: dump user goroutines backtrace (default)
+- 2: dump run time and user goroutines backtrace
+- crash: dump user and run time goroutines and crash in OS specific manner (core dump)
     - You can also get this manually by issuing a `SIGABRT` to a running process
-
 - `gdb -d $(go env GOROOT) -c core <your app>`
 
-- Gotchas:
-  - Don't forget to set `ulimit -c` to non-zero value
-  - TODO: Getting ulimit -c working on OS X
+---
+
+# Post-mortem debugging
+
+## Gotchas:
+- Still want to compile with `-gcflags "-N -l"` to get debugging information
+- Don't forget to set `ulimit -c` to non-zero value
+- TODO: Getting ulimit -c working on OS X
 
 ---
 
