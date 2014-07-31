@@ -120,6 +120,8 @@ func main() {
 		fmt.Fprintf(w, "%d", f)
 	})
 
+	logger.Info("starting server on :8080")
+
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 

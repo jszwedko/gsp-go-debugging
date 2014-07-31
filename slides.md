@@ -130,9 +130,9 @@
 
 ## Gotchas:
 - OSX ships with GDB 6.0 (you'll want > 7.0)
-- Wasn't able to get Go GDB extensions working with `goenv` Go versions
+- Wasn't able to get Go GDB extensions working with versions built somewhere other than install location (ignores `GOROOT`)
 - Hit or miss about which locals are available to be printed
-- Unusable in Go 1.3
+- Unusable in Go 1.3 (for me at least)
     - [gdb: Wrong values for local variables](https://code.google.com/p/go/issues/detail?id=8256)
     - [gdb: breakpoints break things](https://code.google.com/p/go/issues/detail?id=7803)
     - [gdb: nothing works (windows amd64)](https://code.google.com/p/go/issues/detail?id=5552)
@@ -234,10 +234,10 @@
 # Post-mortem debugging
 
 ## `GOTRACEBACK`: Dump stack traces when Go program encounters unrecovered panic or unexpected runtime condition
-- 0: no stack traces
-- 1: dump user goroutines backtrace (default)
-- 2: dump run time and user goroutines backtrace
-- crash: dump user and run time goroutines and crash in OS specific manner (core dump)
+- `0`: no stack traces
+- `1`: dump user goroutines backtrace (default)
+- `2`: dump run time and user goroutines backtrace
+- `crash`: dump user and run time goroutines and crash in OS specific manner (core dump)
     - You can also get this manually by issuing a `SIGABRT` to a running process
 - `gdb -d $(go env GOROOT) -c core <your app>`
 
@@ -248,7 +248,6 @@
 ## Gotchas:
 - Still want to compile with `-gcflags "-N -l"` to get debugging information
 - Don't forget to set `ulimit -c` to non-zero value
-- TODO: Getting ulimit -c working on OS X
 
 ---
 
@@ -256,6 +255,23 @@
 
 # Presenter Notes
 - Also demonstrate SIGABRT
+
+---
+
+# Go Debugging
+
+## Tracing
+- `log`
+- `logrus`
+
+## Interactive debugger
+- `gdb`
+- LiteIDE
+
+## Post-mortem debugging
+- `GOTRACEBACK`
+- `SIGABRT`
+
 
 ---
 
