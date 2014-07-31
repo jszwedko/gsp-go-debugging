@@ -254,6 +254,7 @@
 # Post-mortem debugging example
 
 # Presenter Notes
+- Remove checking of error from log initialization
 - Also demonstrate SIGABRT
 
 ---
